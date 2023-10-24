@@ -25,9 +25,9 @@ export class ProductService {
     return this.http.get<Product>('http://localhost:3000/products/' + id);
   }
 
-  getProductsByCategory(category: string) {
-    return this.http.get<Product>(environment.baseApi + 'products/category/' + category);
-  }
+  // getProductsByCategory(category: string) {
+  //   return this.http.get<Product>(environment.baseApi + 'products/category/' + category);
+  // }
   getCategories() {
     // return this.http.get(environment.baseApi + 'products/categories');
     this.http.get<Product[]>('http://localhost:3000/products').subscribe(res=>{
