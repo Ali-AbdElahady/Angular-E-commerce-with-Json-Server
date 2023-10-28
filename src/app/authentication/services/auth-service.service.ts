@@ -17,7 +17,7 @@ export class AuthServiceService {
 
   login(username: string, password: string) {
     return this.http
-      .post<User>('http://localhost:3000/login', {
+      .post<User>('https://angular-ecommerce-json-server.onrender.com/login', {
         username: username,
         password: password,
       })
@@ -38,7 +38,7 @@ export class AuthServiceService {
 
   register(userInfo: User) {
     return this.http
-      .post<User>('http://localhost:3000/register', userInfo)
+      .post<User>('https://angular-ecommerce-json-server.onrender.com/register', userInfo)
       .pipe(
         catchError(this.handleError),
         tap((res) => {

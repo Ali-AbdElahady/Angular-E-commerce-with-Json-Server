@@ -17,12 +17,12 @@ export class ProductService {
 
   getAllProducts() {
     // return this.http.get<Product>(environment.baseApi + 'products');
-    return this.http.get<Product>('http://localhost:3000/products');
+    return this.http.get<Product>('https://angular-ecommerce-json-server.onrender.com/products');
   }
 
   getSingleProduct(id: number) {
     // return this.http.get<Product>(environment.baseApi + 'products/' + id);
-    return this.http.get<Product>('http://localhost:3000/products/' + id);
+    return this.http.get<Product>('https://angular-ecommerce-json-server.onrender.com/products/' + id);
   }
 
   // getProductsByCategory(category: string) {
@@ -30,7 +30,7 @@ export class ProductService {
   // }
   getCategories() {
     // return this.http.get(environment.baseApi + 'products/categories');
-    this.http.get<Product[]>('http://localhost:3000/products').subscribe(res=>{
+    this.http.get<Product[]>('https://angular-ecommerce-json-server.onrender.com/products').subscribe(res=>{
       res.forEach(element => {
         if(!this.categories.includes(element.category)){
           this.categories.push(element.category)
@@ -39,13 +39,13 @@ export class ProductService {
       this.categoriesObs.next(this.categories)
     })
     return this.categoriesObs
-    // return this.http.get<Product>('http://localhost:3000/categories');
+    // return this.http.get<Product>('https://angular-ecommerce-json-server.onrender.com/categories');
   }
 
   editProduct(newProduct : Product, id:number){
-    return this.http.put('http://localhost:3000/products/'+id,newProduct)
+    return this.http.put('https://angular-ecommerce-json-server.onrender.com/products/'+id,newProduct)
   }
   AddProduct(newProduct:Product){
-    return this.http.post('http://localhost:3000/products/',newProduct)
+    return this.http.post('https://angular-ecommerce-json-server.onrender.com/products/',newProduct)
   }
 }

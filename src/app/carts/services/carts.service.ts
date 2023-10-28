@@ -17,12 +17,12 @@ export class CartsService {
   }
 
   getAllCarts() {
-    return this.http.get('http://localhost:3000/carts');
+    return this.http.get('https://angular-ecommerce-json-server.onrender.com/carts');
   }
 
   getUserById(id: number) {
     let token = 'admin-token';
-    return this.http.get<User>('http://localhost:3000/users/' + id, {
+    return this.http.get<User>('https://angular-ecommerce-json-server.onrender.com/users/' + id, {
       headers: new HttpHeaders({
         Authorization: token,
       }),
@@ -30,6 +30,6 @@ export class CartsService {
   }
 
   submitCarts(cart: any) {
-    return this.http.post('http://localhost:3000/carts', cart);
+    return this.http.post('https://angular-ecommerce-json-server.onrender.com/carts', cart);
   }
 }
