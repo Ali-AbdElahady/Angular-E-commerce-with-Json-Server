@@ -5,6 +5,7 @@ import { Subject, Observable, BehaviorSubject, throwError } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { UserInfo } from '../model/userInfo.model';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -16,6 +17,8 @@ export class AuthServiceService {
   constructor(private http: HttpClient, private router: Router) {}
 
   login(username: string, password: string) {
+    console.log('https://angular-ecommerce-json-server.onrender.com/login');
+
     return this.http
       .post<User>('https://angular-ecommerce-json-server.onrender.com/login', {
         username: username,

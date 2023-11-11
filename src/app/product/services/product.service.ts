@@ -16,20 +16,20 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   getAllProducts() {
-    // return this.http.get<Product>(environment.baseApi + 'products');
+    // return this.http.get<Product>('https://angular-ecommerce-json-server.onrender.com/products');
     return this.http.get<Product>('https://angular-ecommerce-json-server.onrender.com/products');
   }
 
   getSingleProduct(id: number) {
-    // return this.http.get<Product>(environment.baseApi + 'products/' + id);
+    // return this.http.get<Product>('https://angular-ecommerce-json-server.onrender.com/products/' + id);
     return this.http.get<Product>('https://angular-ecommerce-json-server.onrender.com/products/' + id);
   }
 
   // getProductsByCategory(category: string) {
-  //   return this.http.get<Product>(environment.baseApi + 'products/category/' + category);
+  //   return this.http.get<Product>('https://angular-ecommerce-json-server.onrender.com/products/category/' + category);
   // }
   getCategories() {
-    // return this.http.get(environment.baseApi + 'products/categories');
+    // return this.http.get('https://angular-ecommerce-json-server.onrender.com/products/categories');
     this.http.get<Product[]>('https://angular-ecommerce-json-server.onrender.com/products').subscribe(res=>{
       res.forEach(element => {
         if(!this.categories.includes(element.category)){

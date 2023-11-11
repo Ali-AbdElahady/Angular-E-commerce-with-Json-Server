@@ -2,9 +2,9 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
-  baseApi:"https://fakestoreapi.com/",
-  production: false
+export const environment: any = {
+  baseApi: 'https://angular-ecommerce-json-server.onrender.com/',
+  production: false,
 };
 
 /*

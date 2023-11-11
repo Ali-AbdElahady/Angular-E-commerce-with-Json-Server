@@ -1,4 +1,4 @@
 export const environment = {
-  
-  production: true
+  baseApi: '' as const,
+  production: true,
 };
